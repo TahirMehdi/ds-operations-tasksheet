@@ -6,6 +6,7 @@ function user(state = {
 }, action) {
     switch (action.type) {
         case LOGGED_IN:
+            console.warn({...state, ...action.payload})
             return {...state, ...action.payload};
         case LOGGED_OUT:
             return {...state, authorised: false};
