@@ -1,5 +1,12 @@
-import {createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import combinedReducers from './redux/reducers';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-const configureStore = ()=>createStore(combinedReducers);
+const configureStore = preState =>
+    createStore(
+        combinedReducers,
+        preState,
+        applyMiddleware(thunk, logger)
+    );
 export default configureStore;
