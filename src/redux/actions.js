@@ -7,7 +7,7 @@ const loggedIn = (payload) => ({type: LOGGED_IN, payload});
 
 export const login = (payload) => {
     const {username, password} = payload;
-    return dispatch => fetchData('auth/login', 'POST', {username, password})
+    return dispatch => fetchData('api/login', 'POST', {username, password})
     //TODO currently this code will not work at all, because server redirects after successful login
         .then(handleFetchErrors)
         .then(response => {
