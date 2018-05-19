@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Job = ({name})=>{
-  return <span> {name} </span>
+  return <div> {name} </div>
 };
 
 export default Job;

@@ -30,7 +30,7 @@ class Login extends Component {
     render() {
         const {username, password} = this.state;
         const {authorised} = this.props;
-        const {from} = this.props.location.state || {from: {pathname: '/home'}};
+        const {from} = this.props.location.state || {from: {pathname: '/'}};
         return authorised
             ? <Redirect to={from}/>
             : (<form onSubmit={this.handleSubmit}>

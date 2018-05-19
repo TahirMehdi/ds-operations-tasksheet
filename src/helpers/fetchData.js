@@ -54,6 +54,7 @@ const fakeJobEntries = {
 };
 
 const fakeFetch = (url, params) => {
+    console.warn('fakeFetch', url);
     switch (url) {
         case 'api/login':
             return fakeResponse({...fakeUser});

@@ -17,5 +17,23 @@ function user(state = {
     }
 }
 
-const combinedReducers = combineReducers({user});
+function jobEntries(state = [], action){
+    switch(action.type){
+        case 'JOB_ENTRIES_UPDATE':
+            return [...action.payload];
+        case 'JOB_ENTRIES_DELETE':
+            return [...action.payload];
+        case 'JOB_ENTRIES_ADD':
+            return [...action.payload];
+        case 'JOB_ENTRIES_REMOVE':
+            return [...action.payload];
+        default:
+            return state;
+    }
+}
+
+const combinedReducers = combineReducers({
+    user,
+    jobEntries
+});
 export default combinedReducers;
